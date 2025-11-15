@@ -1,0 +1,32 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+.vscode/
+.idea/
+# Environment files
+.env
+.env.local
+.env.*.local
+# Build output
+dist/
+build/
+out/
+# Dependency directories
+bower_components/
+jspm_packages/
+# Miscellaneous
+*.swp
+*.swo
+*.bak
+*.old
+node_modules
+.env
