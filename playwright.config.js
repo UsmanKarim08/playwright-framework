@@ -27,11 +27,16 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'https://www.saucedemo.com/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: false,
+    // headless: true,  // Commented out - let command line control this
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+    slowMo: 1000,  // Add delay between actions to see what's happening
+    actionTimeout: 15000,  // Timeout for individual actions
+    navigationTimeout: 60000,  // Timeout for page navigation
   },
 
   /* Configure projects for major browsers */
@@ -42,18 +47,22 @@ export default defineConfig({
     }, */
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+      use: {
+        ...devices['Desktop Chrome'],
+        channel: 'chrome',
+        headless: false,  // Ensure this project runs in headed mode
+      },
     },
 
-   /* {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    }, */
+    /* {
+       name: 'firefox',
+       use: { ...devices['Desktop Firefox'] },
+     },
+ 
+     {
+       name: 'webkit',
+       use: { ...devices['Desktop Safari'] },
+     }, */
 
     /* Test against mobile viewports. */
     // {

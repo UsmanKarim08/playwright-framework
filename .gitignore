@@ -30,3 +30,7 @@ jspm_packages/
 *.old
 node_modules
 .env
+
+#report
+allure-report/
+allure-results/
