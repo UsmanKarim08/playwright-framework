@@ -30,6 +30,8 @@ jspm_packages/
 *.old
 node_modules
 .env
+.playwright-mcp/
+.github/chatmodes/
 
 #report
 allure-report/
